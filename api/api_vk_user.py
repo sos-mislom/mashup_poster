@@ -33,6 +33,11 @@ class MashupAPI:
         ) as response:
             return await response.json()
 
+    async def get_video(self, videos):
+        async with self.session.post(
+                f'https://api.vk.com/method/video.get?v=5.107&videos={videos}'
+        ) as response:
+            return await response.json()
 
 class MusicDownloader:
     def __init__(self):
